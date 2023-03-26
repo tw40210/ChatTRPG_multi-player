@@ -1,8 +1,8 @@
 ## Desciption
 
-這是一個利用`React, Fastapi, ChatGPT`實現遠端多人 TRPG 的專案，目前預設為使用中文，但也內建了一些英文腳本可以輕鬆切換(見'Custmization')。目前對外網的連結是藉由`ngrok`向外暴露 port，讓遠端朋友可以藉由 ngrok 提供的網址連入本地主機，但這還會要多一些額外的步驟，如果有人知道其他更優雅的手段達成類似的效果，非常歡迎一起討論看看。
+這是一個利用`React, Fastapi, ChatGPT`實現遠端多人 TRPG 的專案，目前預設為使用中文，但也內建了一些英文腳本可以輕鬆切換(見'Custmization')。目前對外網的連結是藉由`ngrok`向外暴露 port，讓遠端朋友可以藉由 ngrok 提供的網址連入本地主機，但這還會要多一些額外的步驟，如果有人知道其他更優雅的手段達成類似的效果，非常歡迎一起討論看看。如果這個專案對你有幫助，請給我點個星星支持我，感謝你~!
 
-This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player TRPG. This project is default using chinese but can easily switch to English.(see below 'Custmization') I use `ngrok` to export local ports to allow friends access my local service.
+This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player TRPG. This project is default using chinese but can easily switch to English.(see below 'Custmization') I use `ngrok` to export local ports to allow friends access my local service. If it's helpful to you, don't hesitate to give me a star. Thank you!
 
 ## Usage
 
