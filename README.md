@@ -11,6 +11,8 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
 - You can create your own character and then submit.
 - You can set multiple skills splited them.
 - You can also see the characters created by others on RoleList.
+![C2](https://user-images.githubusercontent.com/25768669/227801125-b1ed0c10-5b8f-433d-a7f5-33ec15f870ff.PNG)
+![C1](https://user-images.githubusercontent.com/25768669/227801134-00ff3343-7b4c-45fb-98c6-557b2b75b78a.PNG)
 
 #### Start Game
 
@@ -19,10 +21,12 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
 #### Send Command
 
 - Players can write down their action and submit. The system will respend in about 10 seconds once all players finished commands.
+![S1](https://user-images.githubusercontent.com/25768669/227801147-4d61dfaf-3416-4d0c-bcd2-a1a747eb4cc5.PNG)
 
 #### Reset Game
 
 - If you want to restart a new game, you can press reset button and then refresh the page.
+![SC1](https://user-images.githubusercontent.com/25768669/227801150-b555f12a-dab8-4ce0-8e26-5d5312e67c36.PNG)
 
 ## Setup
 
@@ -45,15 +49,8 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
   - Install `ngrok`. You can follow this guideline easily signup an account to use `ngrok`. https://www.sitepoint.com/use-ngrok-test-local-site/
   - To use `ngrok` to export our ports, we need to set `ngrok.yml`. You can find the path by `ngrok config check`. If there is none, create one. We need to specify the port we want to export and token in it as following.
 
-  version: "2"
-  authtoken: XXXXXXX
-  tunnels:
-  &ensp;&ensp; frontend:
-  &ensp;&ensp;&ensp;&ensp; proto: http
-  &ensp;&ensp;&ensp;&ensp; addr: 3000
-  &ensp;&ensp; backend:
-  &ensp;&ensp;&ensp;&ensp; proto: http
-  &ensp;&ensp;&ensp;&ensp; addr: 5000
+![image](https://user-images.githubusercontent.com/25768669/227801103-2eb501ca-06f9-4521-bf67-624e5da1b65d.png)
+
 
   - Once you setup, you can use `ngrok start --all` to start the service and paste the url forwarding to port 5000(which is the port of our backend) to `frontend\src\api\index.js` like
     `const url = 'https://1b5f-86-187-227-43.eu.ngrok.io/roleGame'`
