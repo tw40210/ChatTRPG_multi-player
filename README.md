@@ -29,6 +29,9 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
 ![SC1](https://user-images.githubusercontent.com/25768669/227801150-b555f12a-dab8-4ce0-8e26-5d5312e67c36.PNG)
 
 ## Setup
+- Requirement
+  - npm >= 6.14.13, you can install the newest one by following https://phoenixnap.com/kb/install-node-js-npm-on-windows
+  - python >= 3.7
 
 - installation
   - `cd frontend`
