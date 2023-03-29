@@ -76,3 +76,6 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
 ## Releases
 
 - `v0.1` feat:add PromptMenu, modify the position of Form to buttom
+![tempsnip](https://user-images.githubusercontent.com/25768669/228671236-14c7053a-9788-412e-9676-0e59df03ce07.png)
+
+
