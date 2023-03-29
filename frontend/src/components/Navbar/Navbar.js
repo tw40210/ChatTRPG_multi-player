@@ -2,6 +2,7 @@ import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import {Link} from "react-router-dom";
 import useStyles from './styles';
 import logo from '../../images/logo.png';
+import PromptMenu from "./PromptMenu";
 
 import { startGame, fetchRole, resetGame } from "../../actions/roleGame";
 import { useDispatch } from 'react-redux';
@@ -11,9 +12,10 @@ import {useSelector} from 'react-redux';
 const Navbar = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const roleGame = useSelector((state) => state.RoleGame);
 
     const handleStart = (e) => {
-        dispatch(startGame())
+        dispatch(startGame(roleGame.prompt))
     }
 
     const handleReset = (e) => {
@@ -26,9 +28,10 @@ const Navbar = () => {
                 <Typography className={classes.heading} component={Link} to="/" variant="h2" align="center">ChatTRPG</Typography>
                 <img className={classes.image} src={logo} alt="memories" height="70"/>
             </div>
-            <Toolbar >
-            <Button className={classes.buttons} onClick={handleStart} variant="contained" color="primary">Start</Button>
-            <Button className={classes.buttons} onClick={handleReset} variant="contained" color="primary">Reset</Button>
+            <Toolbar  className={classes.toolBar}>
+                <PromptMenu className={classes.promptMenu}/>
+                <Button className={classes.buttons} onClick={handleStart} variant="contained" color="primary">Start</Button>
+                <Button className={classes.buttons} onClick={handleReset} variant="contained" color="primary">Reset</Button>
 
             </Toolbar>
 

@@ -2,12 +2,14 @@
 #     return 'Chat: '+str(command)
 
 from ..chat.chat import getChatGPTResponse
-from ..objects.prompts import general_prompt, short_prompt, chi_prompt, TRPG_D2D_prompt
+from ..objects.prompts import general_prompt, eng_prompt, chi_prompt, TRPG_D2D_prompt, chi_intro, eng_intro
 
 
 
-start_prompt=short_prompt
-# start_prompt=''
+prompt_dict={
+    'CHINESE':(chi_prompt, chi_intro),
+    'ENGLISH':(eng_prompt, eng_intro),
+}
 
 class RoleGameController:
     def __init__(self) -> None:
@@ -16,13 +18,17 @@ class RoleGameController:
         self.curCommand=[]
         self.isStart=False
         self.messages = [{'role': 'system',
-                                   'content':chi_prompt}]
-        self.message={"role":"user","content":''}
+                                   'content':''}]
+        self.message={'role':'user','content':''}
+        self.prompts=None
     
     def createRole(self, role) -> None:
         self.RoleList.append(role)
 
-    def startGame(self):
+    def startGame(self, prompt):
+        self.prompts=prompt_dict[prompt]
+        self.messages[0]['content']=self.prompts[0]
+
         start_intro = self._get_start_intro()
         self.PlotText.append(start_intro)
         self.PlotText.append(self._getNextPlot(start_intro))
@@ -34,11 +40,13 @@ class RoleGameController:
             self.PlotText.append(command)
             self.PlotText.append(self._getNextPlot(command))
             self.curCommand=[]
+    
+
     def _get_start_intro(self):
         start_plot=''
         for idx, role in enumerate(self.RoleList) :
-            start_plot+=f'一名在隊伍中的人物是{role["Name"]}，他的職業是{role["Job"]}，他的人格特質有{role["Personality"]}，他會的技能有{role["Skills"]}。'
-            # start_plot+=f'One of members in our party is {role["Name"]}. He/She is a {role["Job"]}. His/Her personalities should be {role["Personality"]}. He/She is able to {role["Skills"]}. '
+            start_plot+=self.prompts[1] % (role["Name"], role["Job"], role["Personality"], ', '.join(role["Skills"]))
+            
 
         return start_plot
         

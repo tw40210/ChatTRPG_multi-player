@@ -46,13 +46,13 @@ def fetch_plot(idx: int):
                 "isReady": False
                 }
 
-@router.get("/startGame")
-def start_game():
+@router.get("/startGame/{prompt}")
+def start_game(prompt: str):
     if len(roleGameCotroller.RoleList)==0:
         print("***No plater in list!")
         return {"isStart": roleGameCotroller.isStart}
     roleGameCotroller.isStart=True
-    roleGameCotroller.startGame()
+    roleGameCotroller.startGame(prompt)
     print(roleGameCotroller.RoleList)
     return {"isStart": roleGameCotroller.isStart}
 

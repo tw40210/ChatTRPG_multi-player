@@ -8,7 +8,6 @@ import useStyles from './styles'
 const PlotArea = ()=>{
     const classes = useStyles();
     const plotText = useSelector((state) => state.PlotText);
-    console.log("PlotText: ", plotText.PlotText)
     return (
         <Paper>
             <Typography className={classes.textContainer} variant="h5">PlotArea</Typography>

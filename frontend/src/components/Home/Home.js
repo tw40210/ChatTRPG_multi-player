@@ -28,7 +28,7 @@ const Home = () => {
                         <Grid item xs={12} sm={7}>
                             <GameTable setCurrentId={setCurrentId} />
                         </Grid>
-                        <Grid item xs={12} sm={4}>
+                        <Grid className={classes.formContainer} item xs={12} sm={4}>
                             <Form currentId={currentId} setCurrentId={setCurrentId} />
                         </Grid>
                     </Grid>

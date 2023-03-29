@@ -24,9 +24,10 @@ export default makeStyles((theme) => ({
     marginLeft: '10px',
     marginTop: '5px',
   },
-  toolbar: {
+  toolBar: {
     display: 'flex',
     justifyContent: 'flex-end',
+    alignItems: 'center',
     width: '400px',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -45,6 +46,9 @@ export default makeStyles((theme) => ({
   },
   buttons: {
     margin: '20px',
+  },
+  promptMenu: {
+    marginBottom: '20px',
   },
   userName: {
     display: 'flex',
