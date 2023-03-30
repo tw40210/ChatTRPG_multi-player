@@ -15,7 +15,7 @@ This is a project using `React, Fastapi, ChatGPT` to reach remoting multi-player
 #### Create Role
 
 - You can create your own character and then submit.
-- You can set multiple skills splited them.
+- You can set multiple skills splitted by ",".
 - You can also see the characters created by others on RoleList.
   ![C2](https://user-images.githubusercontent.com/25768669/227801125-b1ed0c10-5b8f-433d-a7f5-33ec15f870ff.PNG)
   ![C1](https://user-images.githubusercontent.com/25768669/227801134-00ff3343-7b4c-45fb-98c6-557b2b75b78a.PNG)
